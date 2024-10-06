@@ -3,7 +3,6 @@ package org.aster.domain.models;
 public class TaskModel {
     private String title;
     private String description;
-    private String status;
 
     public String getTitle() {
         return title;
@@ -19,13 +18,5 @@ public class TaskModel {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 }

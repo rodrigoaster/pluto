@@ -1,16 +1,17 @@
 package org.aster.domain.services;
 
 import jakarta.enterprise.context.RequestScoped;
-import org.aster.app.dto.TaskDTO;
-import org.aster.domain.entities.TaskEntity;
+import jakarta.inject.Inject;
+import org.aster.domain.models.TaskModel;
+import org.aster.infra.TaskPanacheController;
 
 @RequestScoped
 public class TaskService {
-    public TaskEntity createTask(TaskDTO taskDTO) {
-        TaskEntity taskCreated = new TaskEntity();
-        taskCreated.setTitle(taskDTO.getTitle());
-        taskCreated.setDescription(taskDTO.getDescription());
+    @Inject
+    TaskPanacheController taskPanacheController;
 
-        return taskCreated;
+    public TaskModel createTask(TaskModel taskModel) {
+        this.taskPanacheController.createTask(taskModel);
+        return taskModel;
     }
 }

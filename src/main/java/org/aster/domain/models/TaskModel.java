@@ -1,6 +1,6 @@
 package org.aster.domain.entities;
 
-public class TaskEntity {
+public class TaskModel {
     private String title;
     private String description;
 
